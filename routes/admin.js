@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const mongoose = require('mongoose')
+const mongoose = require("mongoose")
 require("../models/Categoria")
-const Categorias = mongoose.model("categorias")
+const Categoria = mongoose.model("categorias")
 
 router.get('/', (req, res) => {
     res.render("admin/index")
@@ -20,8 +20,8 @@ router.get('/categorias/add', (req, res) =>{
     res.render("admin/addcategorias")
 })
 
-router.post("/categorias/mpva",(req, res) =>{
-    const novaCategoria ={
+router.post("/categorias/nova",(req, res) =>{
+    const novaCategoria = {
         nome: req.body.nome,
         slug: req.body.slug
     }
