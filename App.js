@@ -31,6 +31,9 @@ require("./config/auth")(passport)
     app.use((req, res, next) => {
         res.locals.success_msg = req.flash("success_msg")
         res.locals.error_msg = req.flash("error_msg")
+        res.locals.error = req.flash("error")
+        //var global do passport
+        res.locals.user = req.user || null;
         next()
     })
     //Body Parser
